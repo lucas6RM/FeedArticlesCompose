@@ -2,4 +2,6 @@
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
+    val hiltVersion = "2.55"
+    id("com.google.dagger.hilt.android") version hiltVersion apply false
 }

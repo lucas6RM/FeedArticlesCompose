@@ -22,7 +22,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
+    primary = BlueFeedArt,
     secondary = PurpleGrey40,
     tertiary = Pink40
 
@@ -64,7 +64,7 @@ fun FeedArticlesComposeTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = MyTypography,
         content = content
     )
 }
