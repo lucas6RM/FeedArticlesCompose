@@ -33,6 +33,30 @@ val MyTypography = Typography(
         letterSpacing = 0.sp,
         color = BlueFeedArt
     ),
+    displayMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 15.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.sp,
+        color = BlueFeedArt
+    ),
+    displaySmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = 12.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.sp,
+        color = BlueFeedArt
+    ),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 15.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+        color = Color.White
+    ),
     labelSmall = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,

@@ -4,7 +4,7 @@ package com.mercierlucas.feedarticlescompose.data.network.dtos
 
 import com.squareup.moshi.Json
 
-data class CreaArticleDto(
+data class CreateArticleDto(
     @Json(name = "cat")
     val cat: Int,
     @Json(name = "desc")

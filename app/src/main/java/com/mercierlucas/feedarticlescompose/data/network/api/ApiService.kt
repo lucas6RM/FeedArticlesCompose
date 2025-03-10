@@ -1,6 +1,7 @@
 package com.mercierlucas.feedarticlescompose.data.network.api
 
-import com.mercierlucas.feedarticlescompose.data.network.dtos.CreaArticleDto
+import com.mercierlucas.feedarticlescompose.data.model.Article
+import com.mercierlucas.feedarticlescompose.data.network.dtos.CreateArticleDto
 import com.mercierlucas.feedarticlescompose.data.network.dtos.GetAllArticlesDto
 import com.mercierlucas.feedarticlescompose.data.network.dtos.GetOneArticleDto
 import com.mercierlucas.feedarticlescompose.data.network.dtos.RegisterDto
@@ -35,7 +36,7 @@ interface ApiService {
     @GET(ApiRoutes.GET_ALL_ARTICLES)
     suspend fun getAllArticles(
         @Header("token") token: String?
-    ) : Response<GetAllArticlesDto>?
+    ) : Response<List<Article>>?
 
     @GET(ApiRoutes.GET_ONE_ARTICLE)
     suspend fun getOneArticle(
@@ -59,7 +60,7 @@ interface ApiService {
     @PUT(ApiRoutes.CREATE_ARTICLE)
     suspend fun createNewArticle(
         @Header("token") token : String?,
-        @Body creaArticle: CreaArticleDto
+        @Body createArticle: CreateArticleDto
     ) : Response<Unit>?
 
 

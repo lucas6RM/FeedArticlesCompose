@@ -53,4 +53,7 @@
     <string name="new_account_created">New account created</string>
     <string name="new_account_not_created">New account not created</string>
     <string name="error_on_confirmed_password">Error on confirmed password</string>
+    <string name="user_logged">User Logged !</string>
+    <string name="mysql_error">MySQL Error</string>
+    <string name="new_article_created">New article created !\n</string>
 </resources>

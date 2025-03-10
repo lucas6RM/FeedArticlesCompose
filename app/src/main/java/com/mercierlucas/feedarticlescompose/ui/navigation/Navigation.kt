@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mercierlucas.feedarticlescompose.ui.create.CreateArticleScreen
 import com.mercierlucas.feedarticlescompose.ui.create.CreateArticleViewModel
-import com.mercierlucas.feedarticlescompose.ui.edit.EditArticlePreview
+import com.mercierlucas.feedarticlescompose.ui.edit.EditArticleScreen
 import com.mercierlucas.feedarticlescompose.ui.edit.EditArticleViewModel
 import com.mercierlucas.feedarticlescompose.ui.login.LoginScreen
 import com.mercierlucas.feedarticlescompose.ui.login.LoginViewModel
@@ -63,7 +63,7 @@ fun MyNavigation(navController: NavHostController = rememberNavController()){
 
         composable(Screen.EditArticle.route) {
             val editArticleViewModel: EditArticleViewModel = hiltViewModel()
-            EditArticlePreview(navController, editArticleViewModel)
+            EditArticleScreen(navController, editArticleViewModel)
         }
 
     }
