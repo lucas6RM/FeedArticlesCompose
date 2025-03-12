@@ -21,7 +21,8 @@ fun ButtonCustom(
     Button(
         onClick = onClick,
         modifier = modifier,
-        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+        colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer)
     ) {
         Text(text = label, style = MaterialTheme.typography.labelMedium)
     }

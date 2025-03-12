@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -52,11 +53,11 @@ fun CreateArticleScreen(
 
     val context = LocalContext.current
 
-    with(createArticleViewModel){
-        CreateArticleView(isProgressBarActive = isProgressBarActive) { newArticle ->
-            validateInputs(newArticle)
-        }
+    CreateArticleView(isProgressBarActive = isProgressBarActive) { newArticle ->
+        createArticleViewModel.validateInputs(newArticle)
+    }
 
+    with(createArticleViewModel){
         LaunchedEffect(true) {
             messageSharedFlow.collect { messageId ->
                 with(context){
@@ -80,10 +81,10 @@ fun CreateArticleScreen(
 @Composable
 fun CreateArticleView(isProgressBarActive: Boolean, onClickConfirmButton: (CreateArticleModel) -> Unit ){
 
-    var title by rememberSaveable { mutableStateOf("") }
-    var desc by rememberSaveable { mutableStateOf("") }
-    var imageUrl by rememberSaveable { mutableStateOf("") }
-    var category by rememberSaveable { mutableIntStateOf(CATEGORY_SPORT) }
+    var title by remember { mutableStateOf("") }
+    var desc by remember { mutableStateOf("") }
+    var imageUrl by remember { mutableStateOf("") }
+    var category by remember { mutableIntStateOf(CATEGORY_SPORT) }
 
     Column(modifier = Modifier
         .fillMaxSize(),
@@ -101,8 +102,9 @@ fun CreateArticleView(isProgressBarActive: Boolean, onClickConfirmButton: (Creat
             verticalArrangement = Arrangement.SpaceAround
         ){
             TextFieldCustom(
+
                 value = title,
-                onValueChange = { title = it },
+                onValueChange = { if(it.length <= 80) title = it },
                 labelText = stringResource(id = R.string.title),
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
@@ -166,9 +168,6 @@ fun CreateArticleView(isProgressBarActive: Boolean, onClickConfirmButton: (Creat
             }
         }
     }
-
-
-
 }
 
 @Preview(showBackground = true)

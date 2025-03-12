@@ -31,22 +31,14 @@ import com.mercierlucas.feedarticlescompose.R
 import com.mercierlucas.feedarticlescompose.ui.navigation.Screen
 import com.mercierlucas.feedarticlescompose.ui.theme.BlueFeedArt
 import com.mercierlucas.feedarticlescompose.ui.theme.FeedArticlesComposeTheme
+import com.mercierlucas.feedarticlescompose.ui.theme.MyBackground
 
 @Composable
 fun SplashScreen(navController: NavHostController, splashViewModel: SplashViewModel) {
 
-    val statusBarLight = Color.Transparent
+    val statusBarLight = MyBackground
     val view = LocalView.current
 
-    DisposableEffect(true) {
-        val activity = view.context as Activity
-        onDispose {
-            activity.window.statusBarColor = statusBarLight.toArgb()
-            WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-                .isAppearanceLightStatusBars = true
-        }
-    }
-    
     SplashView()
 
     LaunchedEffect(true) {
@@ -63,6 +55,15 @@ fun SplashScreen(navController: NavHostController, splashViewModel: SplashViewMo
                         inclusive = true
                     }
                 }
+        }
+    }
+
+    DisposableEffect(true) {
+        val activity = view.context as Activity
+        onDispose {
+            activity.window.statusBarColor = statusBarLight.toArgb()
+            WindowCompat.getInsetsController(activity.window, activity.window.decorView)
+                .isAppearanceLightStatusBars = true
         }
     }
 }

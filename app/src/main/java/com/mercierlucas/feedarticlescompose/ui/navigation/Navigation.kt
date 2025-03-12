@@ -3,9 +3,11 @@ package com.mercierlucas.feedarticlescompose.ui.navigation
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.mercierlucas.feedarticlescompose.ui.create.CreateArticleScreen
 import com.mercierlucas.feedarticlescompose.ui.create.CreateArticleViewModel
 import com.mercierlucas.feedarticlescompose.ui.edit.EditArticleScreen
@@ -61,9 +63,14 @@ fun MyNavigation(navController: NavHostController = rememberNavController()){
             CreateArticleScreen(navController, createArticleViewModel)
         }
 
-        composable(Screen.EditArticle.route) {
+        composable(Screen.EditArticle.route + "/{articleId}",
+            arguments = listOf(navArgument(name = "articleId"){
+                type = NavType.LongType
+            })
+        ) {navBackStackEntry ->
+            val idArticleToEdit = navBackStackEntry.arguments?.getLong("articleId") ?: 0L
             val editArticleViewModel: EditArticleViewModel = hiltViewModel()
-            EditArticleScreen(navController, editArticleViewModel)
+            EditArticleScreen(navController, editArticleViewModel, idArticleToEdit)
         }
 
     }

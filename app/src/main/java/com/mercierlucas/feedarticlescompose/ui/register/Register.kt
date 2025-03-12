@@ -26,7 +26,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.mercierlucas.feedarticlescompose.R
-import com.mercierlucas.feedarticlescompose.data.model.LoginModel
 import com.mercierlucas.feedarticlescompose.data.model.RegisterModel
 import com.mercierlucas.feedarticlescompose.ui.custom.ButtonCustom
 import com.mercierlucas.feedarticlescompose.ui.custom.TextFieldCustom

@@ -84,7 +84,7 @@ class LoginViewModel @Inject constructor(
                         when(responseLogin.code()){
                             304 -> displayToast(R.string.token_security_problem)
                             400 -> displayToast(R.string.error_param)
-                            401 -> displayToast(R.string.user_unknown)
+                            401 -> displayToast(R.string.user_unknown_bad_password)
                             503 -> Log.e(ContentValues.TAG,"MySQL error")
                             else -> responseLogin.errorBody()?.let {
                                 Log.e(ContentValues.TAG, it.string())

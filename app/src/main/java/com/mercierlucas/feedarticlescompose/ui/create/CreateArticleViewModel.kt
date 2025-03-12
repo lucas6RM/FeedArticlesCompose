@@ -48,9 +48,9 @@ class CreateArticleViewModel @Inject constructor(
         }
     }
 
-    fun goToMainScreen(isResponseCorrectFromServer: Boolean){
+    private fun goToMainScreen(){
         viewModelScope.launch {
-            _goToMainSharedFlow.emit(isResponseCorrectFromServer)
+            _goToMainSharedFlow.emit(true)
         }
     }
 
@@ -84,7 +84,7 @@ class CreateArticleViewModel @Inject constructor(
                     responseCreateArticle == null -> Log.e(ContentValues.TAG,"Pas de reponse du serveur")
                     responseCreateArticle.isSuccessful && body != null ->{
                         displayToast(R.string.new_article_created)
-                        goToMainScreen(true)
+                        goToMainScreen()
                     }
                     else -> {
                         when(responseCreateArticle.code()){
@@ -98,7 +98,7 @@ class CreateArticleViewModel @Inject constructor(
                         }
                     }
                 }
-            } catch (error : ConnectException){
+            } catch (_: ConnectException){
                 displayToast(R.string.no_response_from_server)
             }
             setIsProgressBarDisplayed(false)

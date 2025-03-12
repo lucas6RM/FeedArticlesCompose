@@ -22,8 +22,7 @@
     <string name="edit_article">Edit Article</string>
     <string name="image_url">Image URL</string>
     <string name="details_article">Details Article</string>
-    <string name="created_on">Created on %s</string>
-    <string name="category_s">Category : %s</string>
+    <string name="category_s">"Cat. %1$s"</string>
     <string name="mid_size_title" translatable="false">A middle sized title</string>
     <string name="large_size_description" translatable="false">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop "</string>
     <string name="back">Back</string>
@@ -56,4 +55,8 @@
     <string name="user_logged">User Logged !</string>
     <string name="mysql_error">MySQL Error</string>
     <string name="new_article_created">New article created !\n</string>
+    <string name="article_not_found">Article not found !</string>
+    <string name="from">From %1$s</string>
+    <string name="close_details">Close Details</string>
+    <string name="user_unknown_bad_password">User unknown (bad password or login)</string>
 </resources>

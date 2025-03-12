@@ -17,6 +17,22 @@ val MyTypography = Typography(
         letterSpacing = 0.5.sp,
         color = BlueFeedArt
     ),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+        color = Color.Black
+    ),
+    bodySmall = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 10.sp,
+        lineHeight = 14.sp,
+        letterSpacing = 0.5.sp,
+        color = Color.Black
+    ),
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
